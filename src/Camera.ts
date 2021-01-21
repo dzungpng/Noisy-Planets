@@ -1,4 +1,4 @@
-import * as CameraControls from '3d-view-controls';
+import createCamera from '3d-view-controls';
 import {vec3, mat4} from 'gl-matrix';
 
 class Camera {
@@ -15,7 +15,7 @@ class Camera {
   up: vec3 = vec3.create();
 
   constructor(position: vec3, target: vec3) {
-    this.controls = CameraControls(document.getElementById('canvas'), {
+    this.controls = createCamera(document.getElementById('canvas'), {
       eye: position,
       center: target,
     });
